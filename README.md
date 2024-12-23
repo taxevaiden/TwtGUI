@@ -4,6 +4,20 @@ twt.exe is basically an electron app (made with astro and tailwind) that makes i
 
 (I actually made it because I was bored)
 
+## requirements
+
+you need,,,
+
+- [python](https://www.python.org/) >= 3.4.1
+- recent version of [pip](https://pip.pypa.io/en/stable/)
+- [twtxt](https://twtxt.readthedocs.io/en/stable/)
+
+## status
+
+it's not done at all yet. i mean you can look at your timeline but that's it
+
+(it looks very bad)
+
 ## compatibility
 
 | OS | Version | Status |
