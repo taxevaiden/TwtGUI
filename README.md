@@ -29,4 +29,4 @@ you need,,,
 
 it's not done at all yet. i mean you can look at your timeline but that's it. along with that it's windows only, i only plan to work on other operating systems AFTER everything's finished
 
-commands executed internally on windows may not work as well on macOS/Linux? idk i have neither (if you count the terrible macbook i have)
+commands executed internally on windows may not work as well on macOS/Linux? idk i have neither (unless you count the terrible macbook i have)
