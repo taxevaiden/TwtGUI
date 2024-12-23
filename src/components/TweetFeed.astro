@@ -1,0 +1,18 @@
+---
+async function fetchTimeline() {
+    const response = await fetch('http://localhost:4321/timeline.txt');
+    if (response.ok) {
+      const timeline = await response.text(); //a
+      return timeline;
+    } else {
+      console.error('Failed to fetch timeline');
+    }
+    return "Failed to fetch timeline";
+  }
+
+  
+---
+
+<p>
+    {fetchTimeline()}
+</p>
