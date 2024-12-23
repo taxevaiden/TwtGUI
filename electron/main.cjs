@@ -23,10 +23,10 @@ async function createWindow() {
     const isDev = process.env.NODE_ENV === "development";
 
     if (isDev) {
-        // Load your dev server URL
+        // load dev server URL
         mainWindow.loadURL("http://localhost:8080");
     } else {
-        // Serve the built Astro SSR app
+        // serve the built Astro SSR app
         try {
             const server = await import("../dist/server/entry.mjs"); // Adjust the path if needed
 
@@ -42,7 +42,7 @@ async function createWindow() {
             mainWindow.loadURL(url);
         } catch (error) {
             console.error("Failed to start the server or load the URL:", error);
-            app.quit(); // Exit the app if the server fails to start
+            app.quit(); // exit the app if the server fails to start
         }
     }
 

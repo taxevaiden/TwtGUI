@@ -6,12 +6,14 @@ import TweetForm from "../components/TweetForm.astro";
 
 <Layout>
     <div class="sticky top-0 left-0 p-4 z-10">
+		<!-- tweet Form! -->
         <TweetForm />
         <hr class="shadow-glow mt-4" />
     </div>
 
-    <!-- Tweet Feed Section with Scroll -->
+    <!-- tweet feed -->
     <div class="p-4 max-h-[calc(100%-4rem)] overflow-y-auto">
         <TweetFeed server:defer />
+		<!-- enable Server Islands mode whatever so it's dynamic -->
     </div>
 </Layout>

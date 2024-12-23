@@ -4,13 +4,14 @@ export const prerender = false;
 
 export async function GET() {
     return new Promise<Response>((resolve, reject) => {
-        // Use cmd to execute chcp 65001 and then twtxt
+        // use cmd to execute chcp 65001 and then twtxt
         const command = `cmd`;
         const args = ["/C", "chcp 65001 && twtxt timeline"];
+        // i think these are windows only (except for twtxt) IDK!!
 
         const twtxt = spawn(command, args, {
           shell: true,
-          env: { ...process.env, PYTHONIOENCODING: "utf-8" },
+          env: { ...process.env, PYTHONIOENCODING: "utf-8" }, //ensure encoding is correct,,, python crashes out if it isn't ig?
         });
 
         let output = "";
@@ -24,6 +25,7 @@ export async function GET() {
             errorOutput += data.toString("utf-8");
         });
 
+        //return the timeline! :)))))
         twtxt.on("close", (code) => {
             if (code === 0) {
                 resolve(

@@ -1,10 +1,12 @@
 ---
+//what an entry SHOULD look like..
 interface TimelineEntry {
   user: string;
   time: string;
   message: string;
 }
 
+//fetch timeline with the Cool api endpoint i made :3
 async function fetchTimeline(
     url: string = "http://localhost:8080/timeline.txt"
 ): Promise<string> {
@@ -26,6 +28,7 @@ async function fetchTimeline(
     }
 }
 
+//format the message so that links automatically turn into <a> elements
 function formatLinks(message: string): string {
     // Regular expression to match URLs
     const urlRegex = /https?:\/\/[^\s]+/g;
@@ -35,12 +38,12 @@ function formatLinks(message: string): string {
         return `<a href="${url}" target="_blank">${url}</a>`;
     });
 
-    formattedMessage = '<p class="pl-4">' + formattedMessage + '</p>';
+    formattedMessage = '<p class="pl-4">' + formattedMessage + '</p>'; //put it all into a <p> element so uh styling works
 
     return formattedMessage;
 }
 
-
+//format the timeline, turns it into a nice format just like TimelineEntry
 function formatTimeline(timeline: string): TimelineEntry[] {
     // Replace `âž¤` with `➤`
     const cleanedTimeline = timeline.replace(/âž¤/g, "➤");
@@ -73,17 +76,19 @@ function formatTimeline(timeline: string): TimelineEntry[] {
     return formattedEntries.length > 0 ? formattedEntries : [{ user: "No valid entries", time: "", message: "No valid entries found." }];
 }
 
+//we fetch the timeline,
 const timeline = await fetchTimeline();
-const formattedTimeline = formatTimeline(timeline);
-console.log(formattedTimeline);
+const formattedTimeline = formatTimeline(timeline); //and then we format
+console.log(formattedTimeline); //console.log for debugging i'm gonna remove this later
 ---
 
 <div>
+    <!-- take in every entry and turn it into elements :) -->
     {
         formattedTimeline.map((entry) => (
             <div class="p-4 border border-green-200 shadow-border mb-4">
                 <p><strong>{entry.user}</strong> ({entry.time}):</p>
-                <span set:html={entry.message}></span>
+                <span set:html={entry.message}></span> {/* set html directly so <a> elements and <p> elements work */}
             </div>
         ))
     }
