@@ -6,8 +6,8 @@ twt.exe is basically an electron app (made with astro and tailwind) that makes i
 
 ## compatibility
 
-| OS | Version |
-|----|---------|
-| Windows | Windows 7 and later |
-| macOS | Not supported yet, uses Windows commands at the moment |
-| Linux | Not supported yet, uses Windows commands at the moment |
+| OS | Version | Status |
+|----|---------|--------|
+| Windows | Windows 7 and later | Fully supported |
+| macOS | Not supported | Not supported yet, uses Windows commands at the moment |
+| Linux | Not supported | Not supported yet, uses Windows commands at the moment |
