@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
 import TweetFeed from "../components/TweetFeed.astro";
+import GenericTweetFeed from "../components/GenericTweetFeed.astro";
+
 import TweetForm from "../components/TweetForm.astro";
 ---
 
@@ -13,7 +16,9 @@ import TweetForm from "../components/TweetForm.astro";
 
     <!-- tweet feed -->
     <div class="p-4 max-h-[calc(100%-4rem)] overflow-y-auto">
-        <TweetFeed server:defer />
+        <TweetFeed server:defer>
+			<GenericTweetFeed slot="fallback" />
+		</TweetFeed>
 		<!-- enable Server Islands mode whatever so it's dynamic -->
     </div>
 </Layout>

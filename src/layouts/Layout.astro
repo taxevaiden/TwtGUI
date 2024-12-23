@@ -6,17 +6,15 @@ import Titlebar from "../components/Titlebar.astro";
 <!doctype html>
 <html>
     <head>
-        <title>twt.exe</title> 
-        <meta charset="UTF-8">
+        <title>twt.exe</title>
+        <meta charset="UTF-8" />
 
         <!-- i would put more here but i forgot what to put here i accidentally deleted the default layout file -->
     </head>
     <body class="h-screen p-4 pt-[30px]">
         <Titlebar />
         <div class="max-w-4xl mx-auto flex flex-row gap-2 h-full">
-            <div
-                class="basis-1/2 p-4 border border-green-200 shadow-border"
-            >
+            <div class="basis-1/2 p-4 border border-green-200 shadow-border">
             </div>
             <main
                 class="relative basis-full overflow-hidden border border-green-200 shadow-border"
@@ -26,3 +24,9 @@ import Titlebar from "../components/Titlebar.astro";
         </div>
     </body>
 </html>
+
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        document.body.focus();
+    });
+</script>

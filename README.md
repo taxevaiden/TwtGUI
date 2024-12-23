@@ -12,10 +12,10 @@ everytime. they can just open this app, look, and be done.
 
 you need,,,
 
-- [python](https://www.python.org/) >= 3.4.1: needed to install twtxt
-- recent version of [pip](https://pip.pypa.io/en/stable/): also needed to install twtxt
-- [twtxt](https://twtxt.readthedocs.io/en/stable/), with everything set up properly: to use the app
-- internet: it's kinda obvious why 
+- **[python](https://www.python.org/) >= 3.4.1**: needed to install twtxt
+- **recent version of [pip](https://pip.pypa.io/en/stable/)**: also needed to install twtxt
+- **[twtxt](https://twtxt.readthedocs.io/en/stable/), with everything set up properly**: to use the app
+- **internet**: it's kinda obvious why
 
 ### compatibility
 
@@ -27,6 +27,50 @@ you need,,,
 
 ## status
 
-it's not done at all yet. i mean you can look at your timeline but that's it. along with that it's windows only, i only plan to work on other operating systems AFTER everything's finished
+you can tweet and look at your timeline. everything works correctly! i still haven't done like settings yet but i will soon! ;)
 
-commands executed internally on windows may not work as well on macOS/Linux? idk i have neither (unless you count the terrible macbook i have)
+commands executed internally on windows may not work as well on macOS/Linux? idk i have neither OS (unless you count the terrible macbook i have)
+
+i'll work on macOS/Linux when i finish the app in general (and it functions)
+
+## testing + PLEASE help me
+
+if you'd like to help me test this app out and maybe help out with compatibility for macOS/Linux:
+
+1. **clone the repo**: first, clone the repo to your machine:
+
+        git clone https://github.com/taxevaiden/twtexe.git
+
+2. **install dependencies**: make sure you have [node.js](https://nodejs.org/en) installed. then, navigate to the project folder and run:
+
+        npm install
+
+3. **start testing**:
+   1. **development server**: to start the app locally, run:
+
+            npm run dev
+
+        this will start the development server. then it'll open up an electron window and you can mess around with it
+
+        if you would like to just host the development server, then run:
+
+            npm run start:dev
+
+        > [!WARNING]
+        > if you find
+        >
+        >       "electron:dev": "cross-env NODE_ENV=development electron ."
+        >
+        > in the scripts in `package.json`, using it will open a new electron window, but it also won't display anything since the development server hasn't started,, and it'll also error because of that
+   2. **building and then testing**: you also have an option to build the astro site first, then open the electron window. it functions the same as the development server, but changes you make won't be live. to build and then test, run:
+
+            npm run build
+
+        (yes ik this is not the command for testing i'll change it someday)
+
+        when executed, the astro site will be built and then an electron window will open. if you would like to just open a window since the astro site is already built, run
+
+            npm run electron
+
+        this will just open an electron window, no building here!
+4. **and if you want to help out**: edit the code as needed and open a pull request. i probably won't check the pull requests often but i'll still check. changes that are kind of pointless won't be merged (which will probably be unlikely since my code is terrible. pls someone help me :pray:)

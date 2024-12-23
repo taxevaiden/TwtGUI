@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { ipcMain, app, BrowserWindow } = require("electron");
 const path = require("path");
 
 let mainWindow;
@@ -14,7 +14,7 @@ async function createWindow() {
             height: 30,
         },
         webPreferences: {
-            preload: path.join(__dirname, "preload.js"), // Optional: preload script
+            preload: path.join(__dirname, "preload.cjs"), // Optional: preload script
             nodeIntegration: false,
             contextIsolation: true,
         },
@@ -28,7 +28,7 @@ async function createWindow() {
     } else {
         // serve the built Astro SSR app
         try {
-            const server = await import("../dist/server/entry.mjs"); // Adjust the path if needed
+            const server = await import("../dist/server/entry.mjs");
 
             if (!server || typeof server.startServer !== "function") {
                 throw new Error(
@@ -46,7 +46,7 @@ async function createWindow() {
         }
     }
 
-    mainWindow.removeMenu();
+    // mainWindow.removeMenu();
 
     mainWindow.on("closed", () => {
         mainWindow = null;
@@ -56,9 +56,15 @@ async function createWindow() {
 app.whenReady().then(() => {
     createWindow();
 
-    app.on("activate", () => {
-        if (BrowserWindow.getAllWindows().length === 0) {
-            createWindow();
+    ipcMain.on("reload-window", (event) => {
+        try {
+            if (mainWindow && !mainWindow.isDestroyed()) {
+                mainWindow.webContents.reload();
+            } else {
+                console.error("Main window is not available or destroyed.");
+            }
+        } catch (error) {
+            console.error("Error while reloading the window:", error);
         }
     });
 });

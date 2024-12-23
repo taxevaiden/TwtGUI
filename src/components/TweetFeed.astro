@@ -79,10 +79,10 @@ function formatTimeline(timeline: string): TimelineEntry[] {
 //we fetch the timeline,
 const timeline = await fetchTimeline();
 const formattedTimeline = formatTimeline(timeline); //and then we format
-console.log(formattedTimeline); //console.log for debugging i'm gonna remove this later
+// console.log(formattedTimeline); console.log for debugging i'm gonna remove this later
 ---
 
-<div>
+<div id="container">
     <!-- take in every entry and turn it into elements :) -->
     {
         formattedTimeline.map((entry) => (

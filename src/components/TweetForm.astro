@@ -1,7 +1,5 @@
-<!-- this is just a form -->
-<!-- it doesn't do anything -->
-
-<form class="flex gap-4 flex-col min-[550px]:flex-row">
+<!-- this is just a form --><!-- it doesn't do anything -->
+<form class="flex gap-4 flex-col min-[550px]:flex-row" id="tweetForm">
     <div class="flex flex-1 flex-col min-[350px]:flex-row items-center">
         <label
             class="mt-1 min-[350px]:mr-4 -mb-2 min-[350px]:m-0 font-bold"
@@ -12,6 +10,7 @@
             type="text"
             id="twt"
             name="twt"
+            required
         /><br />
     </div>
     <input
@@ -20,3 +19,34 @@
         value="enter"
     />
 </form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.body.focus();
+        document
+            .getElementById("tweetForm")
+            .addEventListener("submit", async (event) => {
+                event.preventDefault();
+                const tweet = document.getElementById("twt").value;
+
+                const response = await fetch(
+                    "http://localhost:8080/tweet.txt",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ tweet }),
+                    }
+                );
+
+                if (response.ok) {
+                    // alert("Tweet posted successfully!");
+                    document.getElementById("twt").value = ""; // Clear the form
+                    window.location.reload();
+                } else {
+                    alert("Failed to post tweet. Please try again.");
+                }
+            });
+    });
+</script>
