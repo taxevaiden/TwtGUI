@@ -37,15 +37,18 @@ i'll work on macOS/Linux when i finish the app in general (and it functions)
 
 if you'd like to help me test this app out and maybe help out with compatibility for macOS/Linux:
 
-1. **clone the repo**: first, clone the repo to your machine:
+1. **get everything you need installed on your machine**: you'll need
+    - **[git](https://git-scm.com/downloads)**: cloning the repo
+    - **[node.js](https://nodejs.org/en)**: dev servering,, npm, blah blah blah blah...
+2. **clone the repo**: first, clone the repo to your machine:
 
         git clone https://github.com/taxevaiden/twtexe.git
 
-2. **install dependencies**: make sure you have [node.js](https://nodejs.org/en) installed. then, navigate to the project folder and run:
+3. **install dependencies**: make sure you have  installed. then, navigate to the project folder and run:
 
         npm install
 
-3. **start testing**:
+4. **start testing**:
    1. **development server**: to start the app locally, run:
 
             npm run dev
@@ -73,4 +76,4 @@ if you'd like to help me test this app out and maybe help out with compatibility
             npm run electron
 
         this will just open an electron window, no building here!
-4. **and if you want to help out**: edit the code as needed and open a pull request. i probably won't check the pull requests often but i'll still check. changes that are kind of pointless won't be merged (which will probably be unlikely since my code is terrible. pls someone help me :pray:)
+5. **and if you want to help out**: edit the code as needed and open a pull request. i probably won't check the pull requests often but i'll still check. changes that are kind of pointless won't be merged (which will probably be unlikely since my code is terrible. pls someone help me :pray:)
