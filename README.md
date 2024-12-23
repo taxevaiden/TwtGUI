@@ -1,8 +1,12 @@
 # twt.exe
 
-twt.exe is basically an electron app (made with astro and tailwind) that makes it a little easier to use twtxt if you don't want to use the command prompt. yeah i basically made this whole thing because of that.
+twt.exe is an electron app that helps using twtxt a little easier for people who don't want to use the command prompt. it also may be more convenient for people like me who don't wan't to open cmd everytime and type
 
-(I actually made it because I was bored)
+`twtxt timeline`
+
+everytime. they can just open this app, look, and be done.
+
+(i actually just made it because i was bored)
 
 ## requirements
 
