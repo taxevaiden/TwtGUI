@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'IBM Plex Mono';
-    src: url('../assets/fonts/BlexMonoNerdFont-Regular.ttf');
+    font-family: "IBM Plex Mono";
+    src: url("../assets/fonts/BlexMonoNerdFont-Regular.ttf");
 }
 
 @layer base {
@@ -12,7 +12,33 @@
         @apply bg-slate-950;
     }
 
-    h1,h2,h3,h4,h5,h6,p,li,label,input {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li,
+    label,
+    input {
         @apply font-mono text-green-200 leading-none drop-shadow-text;
     }
+
+    a {
+        @apply underline hover:font-bold hover:drop-shadow-text transition-all ease-in hover:ease-out duration-200;
+    }
+
+    /* width
+    ::-webkit-scrollbar {
+        @apply w-4 border border-green-200 shadow-border
+    }
+
+    /* ::-webkit-scrollbar-track {
+        @apply 
+    } */
+
+    /* ::-webkit-scrollbar-thumb {
+        @apply bg-green-200
+      } */
 }

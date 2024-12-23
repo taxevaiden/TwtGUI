@@ -1,5 +1,7 @@
 import { spawn } from "child_process";
 
+export const prerender = false;
+
 export async function GET() {
     return new Promise<Response>((resolve, reject) => {
         // Use cmd to execute chcp 65001 and then twtxt

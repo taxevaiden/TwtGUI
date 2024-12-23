@@ -1,27 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TweetFeed from "../components/TweetFeed.astro";
+import TweetForm from "../components/TweetForm.astro";
 ---
 
 <Layout>
-    <div class="flex gap-2 flex-col min-[550px]:flex-row">
-        <div class="flex flex-1 flex-col min-[350px]:flex-row items-center">
-            <label class="mt-1 min-[350px]:mr-4 -mb-2 min-[350px]:m-0" for="twt">twtxt tweet</label><br />
-            <input
-                class="w-full min-[350px]:flex-1 bg-transparent border border-green-200 shadow-border pl-1 -mb-4 min-[350px]:m-0"
-                type="text"
-                id="twt"
-                name="twt"
-            /><br />
-        </div>
-        <input
-            class="bg-green-200 text-black px-4 py-[0.125rem]"
-            type="submit"
-            value="enter"
-        />
-    </div>
-    <div>
+    <div class="sticky top-0 left-0 p-4 z-10">
+        <TweetForm />
         <hr class="shadow-glow mt-4" />
-        <TweetFeed />
+    </div>
+
+    <!-- Tweet Feed Section with Scroll -->
+    <div class="p-4 max-h-[calc(100%-4rem)] overflow-y-auto">
+        <TweetFeed server:defer />
     </div>
 </Layout>

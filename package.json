@@ -2,14 +2,14 @@
   "name": "twt.exe",
   "type": "module",
   "version": "0.0.1",
-
   "main": "electron/main.cjs",
   "scripts": {
     "start": "electron .",
-    "build": "astro build",
+    "build": "astro build && electron .",
     "dev": "astro dev"
   },
   "dependencies": {
+    "@astrojs/node": "^9.0.0",
     "@astrojs/tailwind": "^5.1.4",
     "astro": "^5.1.1",
     "tailwindcss": "^3.4.17"

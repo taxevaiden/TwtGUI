@@ -7,16 +7,17 @@ import Titlebar from "../components/Titlebar.astro";
 <html>
     <head>
         <title>twt.exe</title>
+        <meta charset="UTF-8">
     </head>
     <body class="h-screen p-4 pt-[30px]">
         <Titlebar />
-        <div class="max-w-4xl mx-auto flex flex-row gap-2 h-full border border-red-600">
+        <div class="max-w-4xl mx-auto flex flex-row gap-2 h-full">
             <div
                 class="basis-1/2 p-4 border border-green-200 shadow-border"
             >
             </div>
             <main
-                class="basis-full p-4 border border-green-200 shadow-border"
+                class="relative basis-full overflow-hidden border border-green-200 shadow-border"
             >
                 <slot />
             </main>
