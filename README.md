@@ -1,6 +1,6 @@
-# twt.exe
+# twtGUI
 
-twt.exe is a twtxt GUI client that helps using twtxt a little easier for people who don't want to use the command prompt. it also may be more convenient for people like me who don't wan't to open cmd everytime and type
+twtGUI is a twtxt GUI client that helps using twtxt a little easier for people who don't want to use the command prompt. it also may be more convenient for people like me who don't wan't to open cmd everytime and type
 
 `twtxt timeline`
 
@@ -22,8 +22,8 @@ you need,,,
 | OS | Version | Status |
 |----|---------|--------|
 | Windows | Windows 7 and later | Fully supported |
-| macOS | Not supported | Not supported yet, uses Windows commands internally at the moment |
-| Linux | Not supported | Not supported yet, uses Windows commands internally at the moment |
+| macOS | Unknown | Haven't tested yet |
+| Linux | Unknown | Haven't tested yet  |
 
 ## status
 

@@ -1,5 +1,5 @@
 {
-    "name": "twt.exe",
+    "name": "twtgui",
     "type": "module",
     "version": "0.0.1",
     "main": "electron/main.cjs",
