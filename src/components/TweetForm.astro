@@ -23,11 +23,12 @@
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         document.body.focus();
-        document
-            .getElementById("tweetForm")
-            .addEventListener("submit", async (event) => {
+        const tweetForm = document.getElementById("tweetForm") as HTMLFormElement;
+
+        tweetForm.addEventListener("submit", async (event) => {
                 event.preventDefault();
-                const tweet = document.getElementById("twt").value;
+                const tweetBox = document.getElementById("twt") as HTMLInputElement;
+                const tweet = tweetBox.value;
 
                 const response = await fetch(
                     "http://localhost:8080/tweet.txt",
@@ -42,10 +43,10 @@
 
                 if (response.ok) {
                     // alert("Tweet posted successfully!");
-                    document.getElementById("twt").value = ""; // Clear the form
+                    tweetBox.value = ""; // Clear the form
                     window.location.reload();
                 } else {
-                    alert("Failed to post tweet. Please try again.");
+                    alert("failed to post tweet. create an issue to help me please!");
                 }
             });
     });

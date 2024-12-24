@@ -55,9 +55,15 @@ if you'd like to help me test this app out and maybe help out with compatibility
 
         this will start the development server. then it'll open up an electron window and you can mess around with it
 
-        if you would like to just host the development server, then run:
+        if you would like to just host the development server to run in your browser, run:
 
             npm run start:dev
+
+        the default port is `8080`. in your browser, go to
+
+            http://localhost:8080/
+
+        you can change the default port in `astro.config.mjs`.
 
         > [!WARNING]
         > if you find
