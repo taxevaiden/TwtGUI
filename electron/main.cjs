@@ -17,9 +17,9 @@ let mainWindow;
 async function createWindow() {
     mainWindow = new BrowserWindow({
         minWidth: 1056,
-        width: 1280,
+        width: 1056,
         minHeight: 600,
-        height: 720,
+        height: 600,
         titleBarStyle: "hidden",
         // titleBarOverlay: {
         //     color: "#020617",

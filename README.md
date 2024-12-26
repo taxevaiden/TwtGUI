@@ -1,4 +1,4 @@
-<p style="text-align:center;"><img src="./icons/twtGUI.png" style="width:15rem;border-radius:20%;"></p>
+<p style="text-align:center;"><img src="./assets/icons/twtGUI.png" style="width:15rem;"></p>
 
 # twtGUI
 
@@ -7,6 +7,10 @@ twtGUI is a twtxt GUI client. it's kind of convenient for people like me who don
 `twtxt timeline`
 
 everytime. they can just open this app, look, and be done.
+
+<img src="./assets/screenshots/index-v0.1.0-alpha.png">
+
+*screenshot from v0.1.0-alpha. design is **not** final.*
 
 (i actually just made it because i was bored)
 
