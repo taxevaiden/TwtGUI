@@ -1,6 +1,6 @@
 {
   "name": "twtgui",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha",
   "description": "a twtxt GUI client that helps using twtxt a little easier for people who don't want to use the command prompt.",
   "author": "taxevaiden",
   "type": "module",

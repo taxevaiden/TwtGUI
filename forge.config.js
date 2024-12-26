@@ -8,26 +8,22 @@ export default {
     rebuildConfig: {},
     makers: [
         {
-            name: "@electron-forge/maker-squirrel",
-            config: {}, // Default config for Windows
-        },
-        {
             name: "@electron-forge/maker-zip",
-            platforms: ["darwin"], // Optional ZIP for macOS
+            platforms: ["win32", "darwin"], // create ZIP files for both Windows and macOS
         },
         {
             name: "@electron-forge/maker-deb",
-            config: {}, // For Linux (Debian-based)
+            config: {}, // for Linux (debian-based)
         },
         {
             name: "@electron-forge/maker-rpm",
-            config: {}, // For Linux (Red Hat-based)
+            config: {}, // for Linux (red gat-based)
         },
     ],
     plugins: [
         {
             name: "@electron-forge/plugin-auto-unpack-natives",
-            config: {}, // Unpack native modules automatically
+            config: {}, // unpack native modules automatically
         },
         {
             name: "@electron-forge/plugin-fuses",

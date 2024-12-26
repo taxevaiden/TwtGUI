@@ -1,4 +1,4 @@
-<p style="text-align:center;"><img src="./icons/twtGUI.png" style="width:15rem;border-radius:3rem;"></p>
+<p style="text-align:center;"><img src="./icons/twtGUI.png" style="width:15rem;border-radius:20%;"></p>
 
 # twtGUI
 
