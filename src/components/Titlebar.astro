@@ -1,6 +1,46 @@
 <!-- electronic Titlebar
 (this is for electron) -->
+<div class="w-full h-8 flex items-center [app-region:drag] fixed -top-1 left-0">
+    <p class="ml-4 mt-1 select-none">twtGUI</p>
 
-<div class="w-full h-[30px] flex justify-center items-center [app-region:drag] fixed top-0 left-0">
-    <p class="select-none">twtGUI</p>
+    <div class="flex-1">
+        <div
+            class="select-none float-right text-center w-11 h-8 leading-[2rem] text-green-200 font-mono drop-shadow-text bg-transparent hover:bg-red-600 transition-colors z-10 [app-region:no-drag]"
+            id="close"
+        >
+            x
+        </div>
+
+        <div
+            class="select-none float-right text-sm text-center w-11 h-8 leading-[2.125rem] text-green-200 font-mono drop-shadow-text bg-transparent hover:bg-white/10 transition-colors z-10 [app-region:no-drag]"
+            id="maximize"
+        >
+            &Square;
+        </div>
+
+        <div
+            class="select-none float-right text-sm text-center w-11 h-8 leading-[2.325rem] text-green-200 font-mono drop-shadow-text bg-transparent hover:bg-white/10 transition-colors z-10 [app-region:no-drag]"
+            id="minimize"
+        >
+            &ndash;
+        </div>
+    </div>
 </div>
+
+<script>
+    const minimize = document.getElementById("minimize") as HTMLDivElement;
+    minimize.addEventListener("click", () => {
+        console.log("pressed");
+        window.electronAPI.invoke("window-minimize");
+    });
+
+    const maximize = document.getElementById("maximize") as HTMLDivElement;
+    maximize.addEventListener("click", () => {
+        window.electronAPI.invoke("window-maximize");
+    });
+
+    const close = document.getElementById("close") as HTMLDivElement;
+    close.addEventListener("click", () => {
+        window.electronAPI.invoke("window-close");
+    });
+</script>

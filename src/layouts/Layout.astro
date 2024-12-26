@@ -1,21 +1,21 @@
 ---
 import "../styles/global.css";
 import Titlebar from "../components/Titlebar.astro";
+import Sidebar from "../components/Sidebar.astro";
 ---
 
 <!doctype html>
 <html>
     <head>
-        <title>twt.exe</title>
+        <title>twtGUI</title>
         <meta charset="UTF-8" />
 
         <!-- i would put more here but i forgot what to put here i accidentally deleted the default layout file -->
     </head>
-    <body class="h-screen p-4 pt-[30px]">
+    <body class="h-screen px-4 py-8">
         <Titlebar />
-        <div class="max-w-4xl mx-auto flex flex-row gap-2 h-full">
-            <div class="basis-1/2 p-4 border border-green-200 shadow-border">
-            </div>
+        <div class="max-w-5xl mx-auto flex flex-row gap-4 h-full">
+            <Sidebar />
             <main
                 class="relative basis-full overflow-hidden border border-green-200 shadow-border"
             >

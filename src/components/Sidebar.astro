@@ -1,0 +1,70 @@
+---
+const links = [
+    {
+        section: "root",
+        links: [
+            {
+                name: "index",
+                link: "/",
+            },
+            {
+                name: "search",
+                link: "/search",
+            },
+            {
+                name: "following",
+                link: "/",
+            },
+        ],
+    },
+    {
+        section: "settings",
+        links: [
+            {
+                name: "custom-script",
+                link: "/",
+            },
+            {
+                name: "conifg-file",
+                link: "/",
+            },
+            {
+                name: "appearance",
+                link: "/",
+            },
+            {
+                name: "info",
+                link: "/",
+            },
+        ],
+    },
+];
+---
+
+<div class="basis-1/2 flex flex-col gap-4">
+    <div class="select-none border border-green-200 shadow-border p-4 pt-5">
+        <p><strong>unkown name (set config file!)</strong></p>
+    </div>
+
+    {
+        links.map((section, index) => (
+            <div
+                class={`border border-green-200 p-4 shadow-border ${
+                    index + 1 === links.length ? "flex-1" : ""
+                }`}
+            >
+                <p>
+                    <strong>{section.section}</strong>
+                </p>
+
+                <ul class="">
+                    {section.links.map((link, index) => (
+                        <li>
+                            {(index + 1) === section.links.length ? '\u2514' : '\u251C'} <a href={link.link}>{link.name}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        ))
+    }
+</div>

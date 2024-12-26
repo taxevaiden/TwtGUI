@@ -27,7 +27,9 @@ you need,,,
 
 ## status
 
-you can tweet and look at your timeline. everything works correctly! i still haven't done like settings yet but i will soon! ;)
+you can tweet and look at your timeline. along with that there's a cool sidebar with just.. links. there is an area where it says "unknown name", that's where your username is supposed to be. because twtxt doesn't have a command to get the username, you have to set the config file. (and also from there i can do MUCH cooler things like view who ur following)
+
+so far only the "index" page is done. i have started work on the "search" page and i have like a form for searching but it doesn't do anything. it's just the form. my plan for that page is you put in a url and view someone's profile that i'll also work on later
 
 commands executed internally on windows may not work as well on macOS/Linux? idk i have neither OS (unless you count the terrible macbook i have)
 
