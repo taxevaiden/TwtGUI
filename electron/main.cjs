@@ -1,17 +1,6 @@
 const { ipcMain, app, BrowserWindow, shell } = require("electron");
 const path = require("path");
 
-app.setUserTasks([
-    {
-        program: process.execPath,
-        arguments: "--new-window",
-        iconPath: __dirname + "../icons/twtGUI.ico",
-        iconIndex: 0,
-        title: "New Window",
-        description: "Create a new window",
-    },
-]);
-
 let mainWindow;
 
 async function createWindow() {

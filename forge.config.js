@@ -7,6 +7,19 @@ export default {
         icon: "./assets/icons/icon",
     },
     rebuildConfig: {},
+    publishers: [
+      {
+        name: '@electron-forge/publisher-github',
+        config: {
+          repository: {
+            owner: 'taxevaiden',
+            name: 'twtGUI'
+          },
+          prerelease: true,
+          draft: true
+        }
+      }
+    ],
     makers: [
         {
             name: "@electron-forge/maker-zip",

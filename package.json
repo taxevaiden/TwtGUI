@@ -1,6 +1,6 @@
 {
   "name": "twtgui",
-  "version": "0.1.0-alpha",
+  "version": "0.1.1-alpha",
   "description": "a twtxt GUI client that helps using twtxt a little easier for people who don't want to use the command prompt.",
   "author": "taxevaiden",
   "license": "MIT",
@@ -14,7 +14,8 @@
     "electron": "electron .",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "astro build && electron-forge make"
+    "make": "astro build && electron-forge make",
+    "publish": "electron-forge publish"
   },
   "dependencies": {
     "@astrojs/node": "^9.0.0",
@@ -31,6 +32,7 @@
     "@electron-forge/maker-zip": "^7.6.0",
     "@electron-forge/plugin-auto-unpack-natives": "^7.6.0",
     "@electron-forge/plugin-fuses": "^7.6.0",
+    "@electron-forge/publisher-github": "^7.6.0",
     "@electron/fuses": "^1.8.0",
     "concurrently": "^9.1.0",
     "cross-env": "^7.0.3",
