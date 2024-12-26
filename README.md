@@ -1,3 +1,5 @@
+<p style="text-align:center;"><img src="./icons/twtGUI.png" style="width:15rem;border-radius:3rem;"></p>
+
 # twtGUI
 
 twtGUI is a twtxt GUI client that helps using twtxt a little easier for people who don't want to use the command prompt. it also may be more convenient for people like me who don't wan't to open cmd everytime and type
@@ -7,6 +9,28 @@ twtGUI is a twtxt GUI client that helps using twtxt a little easier for people w
 everytime. they can just open this app, look, and be done.
 
 (i actually just made it because i was bored)
+
+## status
+
+twtGUI is Constantly being developed. here's some stuff i got working perfectly fine!!
+
+- tweeting works fine
+- viewing timeline works fine
+
+and here's stuff i will work on:
+
+- settings, you'll be able to configure/view stuff like:
+  - the script you want to use to tweet (incase your `twtxt.txt` is in a git repo or something idk!)
+  - config file, since twtxt doesn't have a command for getting the username i gotta have you set the config file path. Sorry! but from there i'll also be able to do cool things..
+  - appearance, maybe like the layout of the site or the tweets. i know there will be two options:
+    - default: this is the default
+    - og: the layout twtxt uses when you do `twtxt timeline` for example
+  - info, this is where you just view like whatever version of the app is, or what version of electron is, etc.
+- following page, just viewing who you're following. this also could make unfollowing easier Somehow
+- search page, put in a url that directs to someone's `twtxt.txt` file and see if it's there! if it is there you can view their profile. speaking of profiles..
+- profile viewing, if you're not following them their name will just appear as a url (and also you gotta set a name for thhem sorry i can't do Anything about that)
+
+yeah that's a Long list.
 
 ## requirements
 
@@ -22,66 +46,71 @@ you need,,,
 | OS | Version | Status |
 |----|---------|--------|
 | Windows | Windows 7 and later | Fully supported |
-| macOS | Unknown | Haven't tested yet |
-| Linux | Unknown | Haven't tested yet  |
-
-## status
-
-you can tweet and look at your timeline. along with that there's a cool sidebar with just.. links. there is an area where it says "unknown name", that's where your username is supposed to be. because twtxt doesn't have a command to get the username, you have to set the config file. (and also from there i can do MUCH cooler things like view who ur following)
-
-so far only the "index" page is done. i have started work on the "search" page and i have like a form for searching but it doesn't do anything. it's just the form. my plan for that page is you put in a url and view someone's profile that i'll also work on later
-
-commands executed internally on windows may not work as well on macOS/Linux? idk i have neither OS (unless you count the terrible macbook i have)
-
-i'll work on macOS/Linux when i finish the app in general (and it functions)
+| macOS | Unknown | Haven't tested yet, most likely not supported |
+| Linux | Unknown | Haven't tested yet, most likely not supported |
 
 ## testing + PLEASE help me
 
 if you'd like to help me test this app out and maybe help out with compatibility for macOS/Linux:
 
-1. **get everything you need installed on your machine**: you'll need
-    - **[git](https://git-scm.com/downloads)**: cloning the repo
-    - **[node.js](https://nodejs.org/en)**: dev servering,, npm, blah blah blah blah...
-2. **clone the repo**: first, clone the repo to your machine:
+### get everything you need installed on your machine
 
-        git clone https://github.com/taxevaiden/twtGUI.git
+you'll need
 
-3. **install dependencies**: make sure you have  installed. then, navigate to the project folder and run:
+- **[git](https://git-scm.com/downloads)**: cloning the repo
+- **[node.js](https://nodejs.org/en)**: dev servering,, npm, blah blah blah blah...
 
-        npm install
+### clone the repo
 
-4. **start testing**:
-   1. **development server**: to start the app locally, run:
+first, clone the repo to your machine:
 
-            npm run dev
+    git clone https://github.com/taxevaiden/twtGUI.git
 
-        this will start the development server. then it'll open up an electron window and you can mess around with it
+### install dependencies
 
-        if you would like to just host the development server to run in your browser, run:
+make sure you have  installed. then, navigate to the project folder and run:
 
-            npm run start:dev
+    npm install
 
-        the default port is `8080`. in your browser, go to
+### start testing
 
-            http://localhost:8080/
+#### development server
 
-        you can change the default port in `astro.config.mjs`.
+to start the app locally, run:
 
-        > [!WARNING]
-        > if you find
-        >
-        >       "electron:dev": "cross-env NODE_ENV=development electron ."
-        >
-        > in the scripts in `package.json`, using it will open a new electron window, but it also won't display anything since the development server hasn't started,, and it'll also error because of that
-   2. **building and then testing**: you also have an option to build the astro site first, then open the electron window. it functions the same as the development server, but changes you make won't be live. to build and then test, run:
+    npm run dev
 
-            npm run build
+this will start the development server. then it'll open up an electron window and you can mess around with it
 
-        (yes ik this is not the command for testing i'll change it someday)
+if you would like to just host the development server to run in your browser, run:
 
-        when executed, the astro site will be built and then an electron window will open. if you would like to just open a window since the astro site is already built, run
+    npm run start:dev
 
-            npm run electron
+the default port is `8080`. in your browser, go to
 
-        this will just open an electron window, no building here!
-5. **and if you want to help out**: edit the code as needed and open a pull request. i probably won't check the pull requests often but i'll still check. changes that are kind of pointless won't be merged (which will probably be unlikely since my code is terrible. pls someone help me :pray:)
+    http://localhost:8080/
+
+you can change the default port in `astro.config.mjs`.
+
+> [!WARNING]
+> if you find
+>
+>     "electron:dev": "cross-env NODE_ENV=development electron ."
+>
+> in the scripts in `package.json`, using it will open a new electron window, but it also won't display anything since the development server hasn't started,, and it'll also error because of that
+
+#### building and then testing
+
+you also have an option to build the astro site first, then open the electron window. it functions the same as the development server, but changes you make won't be live. to build and then test, run:
+
+    npm run build:dev
+
+when executed, the astro site will be built and then an electron window will open. if you would like to just open a window if you already built the astro site, run
+
+    npm run electron
+
+this will just open an electron window, no building here!
+
+### and if you want to help out
+
+edit the code as needed and open a pull request. i probably won't check the pull requests often but i'll still check. changes that are kind of pointless won't be merged (which will probably be unlikely since my code is terrible. pls someone help me :pray:)

@@ -1,24 +1,38 @@
 {
-    "name": "twtgui",
-    "type": "module",
-    "version": "0.0.1",
-    "main": "electron/main.cjs",
-    "scripts": {
-        "build": "astro build && electron .",
-        "dev": "concurrently \"npm run start:dev\" \"npm run electron:dev\"",
-        "start:dev": "astro dev",
-        "electron:dev": "cross-env NODE_ENV=development electron .",
-        "electron": "electron ."
-    },
-    "dependencies": {
-        "@astrojs/node": "^9.0.0",
-        "@astrojs/tailwind": "^5.1.4",
-        "astro": "^5.1.1",
-        "tailwindcss": "^3.4.17"
-    },
-    "devDependencies": {
-        "concurrently": "^9.1.0",
-        "cross-env": "^7.0.3",
-        "electron": "^33.2.1"
-    }
+  "name": "twtgui",
+  "version": "0.1.0",
+  "description": "a twtxt GUI client that helps using twtxt a little easier for people who don't want to use the command prompt.",
+  "author": "taxevaiden",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "build:dev": "astro build && electron .",
+    "dev": "concurrently \"npm run start:dev\" \"npm run electron:dev\"",
+    "start:dev": "astro dev",
+    "electron:dev": "cross-env NODE_ENV=development electron .",
+    "electron": "electron .",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "astro build && electron-forge make"
+  },
+  "dependencies": {
+    "@astrojs/node": "^9.0.0",
+    "@astrojs/tailwind": "^5.1.4",
+    "astro": "^5.1.1",
+    "electron-squirrel-startup": "^1.0.1",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.6.0",
+    "@electron-forge/maker-deb": "^7.6.0",
+    "@electron-forge/maker-rpm": "^7.6.0",
+    "@electron-forge/maker-squirrel": "^7.6.0",
+    "@electron-forge/maker-zip": "^7.6.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.6.0",
+    "@electron-forge/plugin-fuses": "^7.6.0",
+    "@electron/fuses": "^1.8.0",
+    "concurrently": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^33.2.1"
+  }
 }

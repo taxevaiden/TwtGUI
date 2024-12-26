@@ -43,7 +43,18 @@ const links = [
 
 <div class="basis-1/2 flex flex-col gap-4">
     <div class="select-none border border-green-200 shadow-border p-4 pt-5">
-        <p><strong>unkown name (set config file!)</strong></p>
+        <p class="mb-4"><strong>unkown name (set config file!)</strong></p>
+
+        <p class="mb-4">
+            welcome to twtGUI! the message above is just a placeholder message
+        </p>
+        <p>
+            please know that this app is not finished at all. you don't have to
+            complain about the buggy mess this is.
+        </p>
+        <p>
+            <a href="https://github.com/taxevaiden/twtGUI?tab=readme-ov-file#twtgui">read the readme for more info.</a>
+        </p>
     </div>
 
     {
@@ -60,7 +71,10 @@ const links = [
                 <ul class="">
                     {section.links.map((link, index) => (
                         <li>
-                            {(index + 1) === section.links.length ? '\u2514' : '\u251C'} <a href={link.link}>{link.name}</a>
+                            {index + 1 === section.links.length
+                                ? "\u2514"
+                                : "\u251C"}{" "}
+                            <a href={link.link}>{link.name}</a>
                         </li>
                     ))}
                 </ul>
