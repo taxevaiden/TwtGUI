@@ -49,16 +49,17 @@ you need,,,
 | macOS | Unknown | Haven't tested yet, most likely not supported |
 | Linux | Unknown | Haven't tested yet, most likely not supported |
 
-## testing + PLEASE help me
+## compiling
 
-if you'd like to help me test this app out and maybe help out with compatibility for macOS/Linux:
+if you'd like to compile the electron app (for whatever reason) follow These Steps!
 
 ### get everything you need installed on your machine
 
 you'll need
 
 - **[git](https://git-scm.com/downloads)**: cloning the repo
-- **[node.js](https://nodejs.org/en)**: dev servering,, npm, blah blah blah blah...
+- **[node.js](https://nodejs.org/en)**: npm,, literally Everything
+- you'll also need windows installed
 
 ### clone the repo
 
@@ -67,6 +68,41 @@ first, clone the repo to your machine:
     git clone https://github.com/taxevaiden/twtGUI.git
 
 ### install dependencies
+
+make sure you have  installed. then, navigate to the project folder and run:
+
+    npm install
+
+### actually compiling now
+
+this is where we compile the app. compiling is pretty simple i have it all set up and everything yeah yeah
+
+currently, the config is set to compile for windows (and also macOS but uh too lazy to remove that)
+
+anyways, to compile the app run:
+
+    npm run make
+
+this generates a .zip file with the .exe in it, located at `twtGUI/out/make/zip/win32/x64/`. to run the app, simply extract the .zip file somewhere, and open `twtgui.exe`
+
+## testing + PLEASE help me
+
+if you'd like to help me test this app out and maybe help out with compatibility for macOS/Linux:
+
+### get everything you need installed on your machine (again)
+
+you'll need
+
+- **[git](https://git-scm.com/downloads)**: cloning the repo
+- **[node.js](https://nodejs.org/en)**: dev servering,, npm, blah blah blah blah...
+
+### clone the repo (again)
+
+first, clone the repo to your machine:
+
+    git clone https://github.com/taxevaiden/twtGUI.git
+
+### install dependencies (again)
 
 make sure you have  installed. then, navigate to the project folder and run:
 
