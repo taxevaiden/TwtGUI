@@ -150,3 +150,7 @@ this will just open an electron window, no building here!
 ### and if you want to help out
 
 edit the code as needed and open a pull request. i probably won't check the pull requests often but i'll still check. changes that are kind of pointless won't be merged (which will probably be unlikely since my code is terrible. pls someone help me :pray:)
+
+## credits
+
+- this app uses the [IBM Plex Mono](https://www.ibm.com/plex) font, licensed under the [Open Font License](https://opensource.org/licenses/OFL-1.1). the font includes modifications from the [BlexMono Nerd Font](https://github.com/ryanoasis/nerd-fonts).
