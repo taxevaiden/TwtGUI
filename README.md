@@ -44,7 +44,7 @@ if you'd like to help me test this app out and maybe help out with compatibility
     - **[node.js](https://nodejs.org/en)**: dev servering,, npm, blah blah blah blah...
 2. **clone the repo**: first, clone the repo to your machine:
 
-        git clone https://github.com/taxevaiden/twtexe.git
+        git clone https://github.com/taxevaiden/twtGUI.git
 
 3. **install dependencies**: make sure you have  installed. then, navigate to the project folder and run:
 

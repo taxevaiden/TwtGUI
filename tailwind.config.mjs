@@ -8,12 +8,12 @@ export default {
             },
 
 			boxShadow: {
-				'border': ['0px 0px 8px rgba(187, 247, 208, 0.5)', 'inset 0px 0px 8px rgba(187, 247, 208, 0.5)'],
-				'glow': ['0px 0px 8px rgba(187, 247, 208, 0.5)'],
+				'border': ['0px 0px 8px rgba(187, 247, 208, 0.25)', 'inset 0px 0px 8px rgba(187, 247, 208, 0.5)'],
+				'glow': ['0px 0px 8px rgba(187, 247, 208, 0.25)'],
 			},
 
             dropShadow: {
-				'text': '0px 0px 8px rgba(187, 247, 208, 0.5)',
+				'text': '0px 0px 8px rgba(187, 247, 208, 0.25)',
 			},
         },
     },
