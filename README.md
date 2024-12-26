@@ -2,7 +2,7 @@
 
 # twtGUI
 
-twtGUI is a twtxt GUI client that helps using twtxt a little easier for people who don't want to use the command prompt. it also may be more convenient for people like me who don't wan't to open cmd everytime and type
+twtGUI is a twtxt GUI client. it's kind of convenient for people like me who don't wan't to open cmd everytime and type
 
 `twtxt timeline`
 
