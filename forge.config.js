@@ -1,4 +1,5 @@
-import * as path from "node:path";
+import { fileURLToPath } from 'node:url';
+import { resolve } from "node:path";
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -6,14 +7,17 @@ dotenv.config();
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
 
-const iconsPath = path.resolve(__dirname, "assets", "icons");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const iconsPath = resolve(__dirname, "assets", "icons");
 
 export default {
     packagerConfig: {
         name: "twtGUI",
         executableName: "twtGUI",
         asar: true,
-        icon: path.resolve(iconsPath, "icon"),
+        icon: resolve(iconsPath, "icon"),
     },
     rebuildConfig: {},
     publishers: [
