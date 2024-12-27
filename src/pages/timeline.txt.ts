@@ -4,14 +4,19 @@ export const prerender = false;
 
 export async function GET() {
     return new Promise<Response>((resolve, reject) => {
-        // use cmd to execute chcp 65001 and then twtxt
-        const command = `cmd`;
-        const args = ["/C", "chcp 65001 && twtxt timeline"];
-        // i think these are windows only (except for twtxt) IDK!!
+        const isWindows = process.platform === "win32"; // check if we're on windows or not
+
+        // if on windows use cmd. if on macOS/Linux use sh.
+        const command = isWindows ? "cmd" : "sh";
+        const args = isWindows
+            ? ["/C", "chcp 65001 && twtxt timeline"]
+            : ["-c", "twtxt timeline"];
+        // if on windows, set encoding to UTF-8 `chcp 65001` and view timeline. otherwise just view timeline.
 
         const twtxt = spawn(command, args, {
-          shell: true,
-          env: { ...process.env, PYTHONIOENCODING: "utf-8" }, //ensure encoding is correct,,, python crashes out if it isn't ig?
+            shell: isWindows, // use shell on windows to handle cmd
+            env: { ...process.env, PYTHONIOENCODING: "utf-8" },
+            // ensure encoding is correct,,, python crashes out if it isn't ig?
         });
 
         let output = "";
@@ -21,11 +26,12 @@ export async function GET() {
             output += data.toString("utf-8");
         });
 
+        // capture stderr
         twtxt.stderr.on("data", (data) => {
             errorOutput += data.toString("utf-8");
         });
 
-        //return the timeline! :)))))
+        // return the timeline! :)))))
         twtxt.on("close", (code) => {
             if (code === 0) {
                 resolve(
@@ -44,6 +50,7 @@ export async function GET() {
             }
         });
 
+        // handle error
         twtxt.on("error", (err) => {
             console.error("Failed to start command:", err);
             reject(

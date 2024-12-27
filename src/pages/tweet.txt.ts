@@ -14,11 +14,16 @@ export async function POST({ request }: { request: Request }) {
     }
 
     return new Promise<Response>((resolve) => {
-        const command = "cmd"; // use "cmd" for Windows, or "sh" for macOS/Linux.
-        const args = ["/C", `twtxt tweet "${tweet}"`];
+        const isWindows = process.platform === "win32"; // check if we're on windows or not
+
+        // if on windows use cmd. if on macOS/Linux use sh
+        const command = isWindows ? "cmd" : "sh";
+        const args = isWindows
+            ? ["/C", `twtxt tweet ${tweet}`]
+            : ["-c", `twtxt tweet ${tweet}`];
 
         const tweetCommand = spawn(command, args, {
-            shell: true,
+            shell: isWindows,
             env: { ...process.env, PYTHONIOENCODING: "utf-8" },
         });
 

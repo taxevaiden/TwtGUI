@@ -49,9 +49,18 @@ you need,,,
 
 | OS | Version | Status |
 |----|---------|--------|
-| Windows | Windows 7 and later | Fully supported |
-| macOS | Unknown | Haven't tested yet, most likely not supported |
-| Linux | Unknown | Haven't tested yet, most likely not supported |
+| Windows | Windows 10 and newer | Fully supported |
+| macOS | macOS (Big Sur and newer) | Haven't tested yet, should be supported |
+
+#### linux
+
+| Distro | Version | Status |
+|--------|---------|--------|
+| Ubuntu | Ubuntu 18.04 and newer | Haven't tested yet, should be supported |
+| Fedora | Fedora 32 and newer | Haven't tested yet, should be supported |
+| Debian | Debian 10 and newer | Haven't tested yet, should be supported |
+
+compatibility info taken from [electron's readme.](https://github.com/electron/electron/blob/main/README.md#platform-support)
 
 ## compiling
 
@@ -63,7 +72,7 @@ you'll need
 
 - **[git](https://git-scm.com/downloads)**: cloning the repo
 - **[node.js](https://nodejs.org/en)**: npm,, literally Everything
-- you'll also need windows installed
+- ~~you'll also need windows installed~~ this should work on all operating systems, if it doesn't lmk
 
 ### clone the repo
 
@@ -73,23 +82,21 @@ first, clone the repo to your machine:
 
 ### install dependencies
 
-make sure you have  installed. then, navigate to the project folder and run:
+make sure you have everything installed. then, navigate to the project folder and run:
 
     npm install
 
 ### actually compiling now
 
-this is where we compile the app. compiling is pretty simple i have it all set up and everything yeah yeah
-
-currently, the config is set to compile for windows (and also macOS but uh too lazy to remove that)
-
-anyways, to compile the app run:
+i already have the command for compiling set up, so to compile the app run:
 
     npm run make
 
-this generates a .zip file with the .exe in it, located at `twtGUI/out/make/zip/win32/x64/`. to run the app, simply extract the .zip file somewhere, and open `twtgui.exe`
+this generates a .zip file with the .exe in it, located at `twtGUI/out/make/zip/win32/x64/` (assuming you're on windows?). to run the app, simply extract the .zip file somewhere, and open `twtgui.exe`
 
-## testing + PLEASE help me
+TODO: add info for other operating systems (macOS, linux,,)
+
+## contributing
 
 if you'd like to help me test this app out and maybe help out with compatibility for macOS/Linux:
 
@@ -108,7 +115,7 @@ first, clone the repo to your machine:
 
 ### install dependencies (again)
 
-make sure you have  installed. then, navigate to the project folder and run:
+make sure you have everything installed. then, navigate to the project folder and run:
 
     npm install
 
@@ -154,6 +161,8 @@ this will just open an electron window, no building here!
 ### and if you want to help out
 
 edit the code as needed and open a pull request. i probably won't check the pull requests often but i'll still check. changes that are kind of pointless won't be merged (which will probably be unlikely since my code is terrible. pls someone help me :pray:)
+
+![meme](/assets/youWILLusetwtGUI.png)
 
 ## credits
 
