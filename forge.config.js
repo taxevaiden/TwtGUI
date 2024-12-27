@@ -1,23 +1,23 @@
-import { fileURLToPath } from 'node:url';
-import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
 
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config();
 
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(__filename);
 
-const iconsPath = resolve(__dirname, "assets", "icons");
+const iconsPath = path.resolve(__dirname, "assets", "icons");
 
 export default {
     packagerConfig: {
         name: "twtGUI",
         executableName: "twtGUI",
         asar: true,
-        icon: resolve(iconsPath, "icon"),
+        icon: path.resolve(iconsPath, "icon"),
     },
     rebuildConfig: {},
     publishers: [
@@ -27,7 +27,6 @@ export default {
                 repository: {
                     owner: "taxevaiden",
                     name: "twtGUI",
-                    generateReleaseNotes: true,
                 },
                 prerelease: true,
                 draft: true,
@@ -38,21 +37,21 @@ export default {
     makers: [
         {
             name: "@electron-forge/maker-zip",
-            platforms: ["win32", "darwin"], // create ZIP files for both Windows and macOS
+            platforms: ["win32", "darwin"],
         },
         {
             name: "@electron-forge/maker-deb",
-            config: {}, // for Linux (debian-based)
+            config: {},
         },
         {
             name: "@electron-forge/maker-rpm",
-            config: {}, // for Linux (red gat-based)
+            config: {},
         },
     ],
     plugins: [
         {
             name: "@electron-forge/plugin-auto-unpack-natives",
-            config: {}, // unpack native modules automatically
+            config: {},
         },
         {
             name: "@electron-forge/plugin-fuses",
