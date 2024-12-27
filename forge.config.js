@@ -1,24 +1,35 @@
+import * as path from "node:path";
+
+import dotenv from 'dotenv';
+dotenv.config();
+
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
 
+const iconsPath = path.resolve(__dirname, "assets", "icons");
+
 export default {
     packagerConfig: {
+        name: "twtGUI",
+        executableName: "twtGUI",
         asar: true,
-        icon: "./assets/icons/icon",
+        icon: path.resolve(iconsPath, "icon"),
     },
     rebuildConfig: {},
     publishers: [
-      {
-        name: '@electron-forge/publisher-github',
-        config: {
-          repository: {
-            owner: 'taxevaiden',
-            name: 'twtGUI'
-          },
-          prerelease: true,
-          draft: true
-        }
-      }
+        {
+            name: "@electron-forge/publisher-github",
+            config: {
+                repository: {
+                    owner: "taxevaiden",
+                    name: "twtGUI",
+                    generateReleaseNotes: true,
+                },
+                prerelease: true,
+                draft: true,
+                authToken: process.env.GITHUB_TOKEN,
+            },
+        },
     ],
     makers: [
         {

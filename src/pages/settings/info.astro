@@ -5,5 +5,19 @@ import Layout from "../../layouts/Layout.astro";
 <Layout>
     <div class="p-4">
         <p><strong>./settings/info</strong></p>
+
+        <div id="infoContainer">
+
+        </div>
+
+        <script>
+            window.addEventListener("DOMContentLoaded", () => {
+                const container = document.getElementById("infoContainer") as HTMLDivElement;
+
+                const appVersion = window.electronAPI.getVersion()
+
+                container.innerHTML = `<p>${appVersion}</p>`
+            });
+        </script>
     </div>
 </Layout>
